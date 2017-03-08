@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 #include <QtWidgets>
 #include <QtNetwork>
-#include <QDebug>
 
 int temp=0;
 double velo=0;
@@ -56,7 +55,6 @@ void MainWindow::increase1()
     temp+=5;
     if (temp>=100)
             temp=100;
-    //ui->speed1->display(temp);
     ui->slider1->setValue(temp);
 }
 
@@ -66,7 +64,6 @@ void MainWindow::decrease1()
     temp-=5;
     if (temp<=-100)
             temp=-100;
-    //ui->speed1->display(temp);
     ui->slider1->setValue(temp);
 }
 
@@ -84,17 +81,14 @@ void MainWindow::sendDatagram(int i)
     if (i>0){
         sprintf(buffer, "2;%i",i);
         datagram.append(buffer);
-        qDebug()<<"datagram sent: "<<i<<" "<<datagram;
     }
     else if (i<0){
         i*=-1;
         sprintf(buffer, "1;%i",i);
         datagram.append(buffer);
-        qDebug()<<"datagram sent: "<<i<<" "<<datagram;
     }
     else{
        datagram="0;0";
-       qDebug()<<"datagram sent: "<<datagram;
     }
     udpSocket->writeDatagram(datagram.data(), datagram.size(),QHostAddress("192.168.178.36"), 4210);
 }
