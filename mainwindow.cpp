@@ -16,8 +16,15 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->slider1->setRange(-100,100);
     ui->slider2->setRange(-100,100);
+    ui->slider3->setRange(-100,100);
+    ui->slider4->setRange(-100,100);
+    ui->slider5->setRange(-100,100);
+
     ui->slider1->setValue(0);
     ui->slider2->setValue(0);
+    ui->slider3->setValue(0);
+    ui->slider4->setValue(0);
+    ui->slider5->setValue(0);
 
 
     connect(ui->slider1, SIGNAL (valueChanged(int)), this, SLOT(display1(int)));
@@ -25,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->speed1minus, SIGNAL (clicked()), this, SLOT(decrease1()) );
     connect(ui->stop1, SIGNAL (clicked()), this, SLOT(halt1()) );
 
-    connect( ui->actionBeenden   , SIGNAL (triggered()), this, SLOT(close()));
+    connect( ui->actionBeenden, SIGNAL (triggered()), this, SLOT(close()));
 
     udpSocket = new QUdpSocket(this);
     connect(ui->slider1, SIGNAL(valueChanged(int)),this, SLOT(sendDatagram(int)));
@@ -49,7 +56,7 @@ void MainWindow::increase1()
     temp+=5;
     if (temp>=100)
             temp=100;
-    ui->speed1->display(temp);
+    //ui->speed1->display(temp);
     ui->slider1->setValue(temp);
 }
 
@@ -59,7 +66,7 @@ void MainWindow::decrease1()
     temp-=5;
     if (temp<=-100)
             temp=-100;
-    ui->speed1->display(temp);
+    //ui->speed1->display(temp);
     ui->slider1->setValue(temp);
 }
 
@@ -87,10 +94,8 @@ void MainWindow::sendDatagram(int i)
     }
     else{
        datagram="0;0";
-       qDebug()<<"datagram sent";
+       qDebug()<<"datagram sent: "<<datagram;
     }
-
-    //QHostAddress::Broadcast
     udpSocket->writeDatagram(datagram.data(), datagram.size(),QHostAddress("192.168.178.36"), 4210);
 }
 

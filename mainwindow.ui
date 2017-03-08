@@ -27,7 +27,7 @@
         </property>
         <widget class="QWidget" name="engine1">
          <attribute name="title">
-          <string>E-Lok</string>
+          <string>Intercity</string>
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
@@ -82,7 +82,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="speed2plus_2">
+             <widget class="QPushButton" name="speed2minus">
               <property name="text">
                <string>Geschwindigkeit verringern</string>
               </property>
@@ -113,13 +113,134 @@
          <attribute name="title">
           <string>Stainz II</string>
          </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QPushButton" name="speed3plus">
+              <property name="text">
+               <string>Geschwindigkeit erhöhen</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="speed3minus">
+              <property name="text">
+               <string>Geschwindigkeit verringern</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="stop3">
+              <property name="text">
+               <string>Stopp!</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLCDNumber" name="speed3"/>
+            </item>
+            <item>
+             <widget class="QSlider" name="slider3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="engine4">
+         <attribute name="title">
+          <string>E-Lok</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="QPushButton" name="speed4plus">
+              <property name="text">
+               <string>Geschwindigkeit erhöhen</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="speed4minus">
+              <property name="text">
+               <string>Geschwindigkeit verringern</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="stop4">
+              <property name="text">
+               <string>Stopp!</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLCDNumber" name="speed4"/>
+            </item>
+            <item>
+             <widget class="QSlider" name="slider4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="engine5">
+         <attribute name="title">
+          <string>Bachmann</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_10">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <widget class="QPushButton" name="speed5plus">
+              <property name="text">
+               <string>Geschwindigkeit erhöhen</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="speed5minus">
+              <property name="text">
+               <string>Geschwindigkeit verringern</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="stop5">
+              <property name="text">
+               <string>Stopp!</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLCDNumber" name="speed5"/>
+            </item>
+            <item>
+             <widget class="QSlider" name="slider5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </widget>
        </widget>
       </item>
      </layout>
     </item>
     <item row="1" column="0" alignment="Qt::AlignHCenter">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="emergencystop">
       <property name="text">
        <string>Nothalt</string>
       </property>
